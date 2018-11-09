@@ -14080,6 +14080,7 @@ Saving to: ‘../data/aclImdb_v1.tar.gz’
 <p>Deep Nets like processing data of the same length, therefore it's important to pad any reviews smaller than 500 tokes and cut those which are longer.</p>
 <p>During preprocessing we convert the words into integers by the help of a dictionary. We have to make sure, we use the same dictionary when preprocessing testings data.</p>
 <p>Generally speaking we can modify our training data any way we like to get stable results we have to be sure to apply the same modifications to the testdata to get stable results.</p>
+<p><em>One caveat could arise with caching data. If training data is cached, also the test data will be read from cache - even if we would like to test our model with different test data.</em></p>
 
 </div>
 </div>
