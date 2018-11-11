@@ -14081,6 +14081,7 @@ Saving to: ‘../data/aclImdb_v1.tar.gz’
 <p>During preprocessing we convert the words into integers by the help of a dictionary. We have to make sure, we use the same dictionary when preprocessing testings data.</p>
 <p>Generally speaking we can modify our training data any way we like to get stable results we have to be sure to apply the same modifications to the testdata to get stable results.</p>
 <p><em>One caveat could arise with caching data. If training data is cached, also the test data will be read from cache - even if we would like to test our model with different test data.</em></p>
+<p><strong>While <code>preprocess_data</code> is applied per record and <code>convert_and_pad_data</code> uses <code>word_dict</code> these facts won't do any harm on using the functions with the testing data because we make sure to use the same <code>word_dict</code> for converting training and testing data. This is important because <code>word_dict</code> contains our mapping from words to integers. We expect the testing data to contain the same words as our training data (this approach wouldn't work if we would train with Englisch reviews and test with French ones. If we would map our testing data with a different mapping this would crash our model.</strong></p>
 
 </div>
 </div>
